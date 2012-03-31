@@ -1,6 +1,7 @@
 package com.cbp.PublicTrial;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,8 +14,12 @@ public class TrialCommand implements CommandExecutor{
 			if(args.length== 0){
 				
 			}else if(args.length==1){
-				if(p.getServer().getPlayer(args[0]) != null){
-					Player targetPlayer = Bukkit.getPlayer(args[0]);
+				if(p.hasPermission("trial.detain")){
+					if(p.getServer().getPlayer(args[0]) != null){
+						Player targetPlayer = Bukkit.getPlayer(args[0]);
+					}
+				}else{
+					p.sendMessage(ChatColor.RED + "You Don't have Permision!");
 				}
 				
 			}else if(args[0].equalsIgnoreCase("Convict")){
