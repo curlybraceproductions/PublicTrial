@@ -1,5 +1,7 @@
 package com.cbp.PublicTrial;
 
-public class TrialListener {
+import org.bukkit.event.Listener;
+
+public class TrialListener implements Listener{
 
 }
